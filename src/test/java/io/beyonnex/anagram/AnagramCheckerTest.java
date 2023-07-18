@@ -13,6 +13,17 @@ public abstract class AnagramCheckerTest {
     }
 
     @Test
+    void testEmptyStrings() {
+        assertThat(anagramChecker.check("", "")).isTrue();
+    }
+
+    @Test
+    void testSingleCharacterAnagrams() {
+        assertThat(anagramChecker.check("a", "a")).isTrue();
+        assertThat(anagramChecker.check("a", "b")).isFalse();
+    }
+
+    @Test
     void testAnagramsWithSameCharacters() {
         assertThat(anagramChecker.check("listen", "silent")).isTrue();
         assertThat(anagramChecker.check("elbow", "below")).isTrue();
@@ -25,14 +36,9 @@ public abstract class AnagramCheckerTest {
     }
 
     @Test
-    void testEmptyStrings() {
-        assertThat(anagramChecker.check("", "")).isTrue();
-    }
-
-    @Test
-    void testSingleCharacterAnagrams() {
-        assertThat(anagramChecker.check("a", "a")).isTrue();
-        assertThat(anagramChecker.check("a", "b")).isFalse();
+    void testAnagramsWithDifferentCharacters() {
+        assertThat(anagramChecker.check("abcd", "efgh")).isFalse();
+        assertThat(anagramChecker.check("hello", "world")).isFalse();
     }
 
 }
