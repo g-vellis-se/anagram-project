@@ -7,9 +7,12 @@ package io.beyonnex.anagram;
 public class CharFreqAnagramCheckerImpl implements AnagramChecker {
 
     @Override
-    public boolean check(String s1, String s2) {
+    public boolean check(String str1, String str2) {
+        // Step 1: Compare lengths
+        if (str1.length() != str2.length()) return false;
 
-        return false;
-     }
+
+        return true;
+    }
 
 }
