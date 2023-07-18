@@ -41,4 +41,10 @@ public abstract class AnagramCheckerTest {
         assertThat(anagramChecker.check("hello", "world")).isFalse();
     }
 
+    @Test
+    void testAnagramsIgnoreCase() {
+        assertThat(anagramChecker.check("listen", "SILENT")).isTrue();
+        assertThat(anagramChecker.check("elbow", "BELOW")).isTrue();
+    }
+
 }

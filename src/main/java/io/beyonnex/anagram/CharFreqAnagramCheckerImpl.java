@@ -15,11 +15,11 @@ public class CharFreqAnagramCheckerImpl implements AnagramChecker {
         int[] charCount = new int[128]; // Assuming Unicode characters
 
         // Step 3: Update the frequency count for characters in str1
-        for (char c : str1.toCharArray())
+        for (char c : str1.toLowerCase().toCharArray())
             charCount[c]++;
 
         // Step 4: Update the frequency count for characters in str2
-        for (char c : str2.toCharArray())
+        for (char c : str2.toLowerCase().toCharArray())
             charCount[c]--;
 
         // Step 5: Check if any character count is non-zero
