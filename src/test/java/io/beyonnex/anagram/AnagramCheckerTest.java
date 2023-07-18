@@ -23,4 +23,10 @@ public abstract class AnagramCheckerTest {
         assertThat(anagramChecker.check("", "")).isTrue();
     }
 
+    @Test
+    void testSingleCharacterAnagrams() {
+        assertThat(anagramChecker.check("a", "a")).isTrue();
+        assertThat(anagramChecker.check("a", "b")).isFalse();
+    }
+
 }
