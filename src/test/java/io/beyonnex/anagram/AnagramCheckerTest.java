@@ -18,4 +18,9 @@ public abstract class AnagramCheckerTest {
         assertThat(anagramChecker.check("hello", "helo")).isFalse();
     }
 
+    @Test
+    void testEmptyStrings() {
+        assertThat(anagramChecker.check("", "")).isTrue();
+    }
+
 }
