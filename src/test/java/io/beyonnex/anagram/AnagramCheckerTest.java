@@ -13,6 +13,12 @@ public abstract class AnagramCheckerTest {
     }
 
     @Test
+    void testAnagramsWithSameCharacters() {
+        assertThat(anagramChecker.check("listen", "silent")).isTrue();
+        assertThat(anagramChecker.check("elbow", "below")).isTrue();
+    }
+
+    @Test
     void testAnagramsWithDifferentCharacterCounts() {
         assertThat(anagramChecker.check("abc", "ab")).isFalse();
         assertThat(anagramChecker.check("hello", "helo")).isFalse();
